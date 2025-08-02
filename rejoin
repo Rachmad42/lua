@@ -10,7 +10,7 @@ function notif(teks, time)
 
     local label = Instance.new("TextLabel")
     label.Size = UDim2.new(0.6, 0, 0.1, 0)
-    label.Position = UDim2.new(0.2, 0, 0.4, 0) -- tengah layar
+    label.Position = UDim2.new(0.2, 0, 0.4, 0)
     label.BackgroundTransparency = 0.3
     label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     label.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -26,9 +26,10 @@ function notif(teks, time)
     end
 end
 
-
-for i = 25, 1, -1 do
+local WaitingTime = 2
+for i = WaitingTime, 1, -1 do
     notif("Rejoin in " .. tostring(i), 1)
     task.wait(1)
 end
+
 TeleportService:Teleport(PlaceId, LocalPlayer)
